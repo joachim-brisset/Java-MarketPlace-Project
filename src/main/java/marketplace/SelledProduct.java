@@ -1,13 +1,13 @@
 package main.java.marketplace;
 
-public class Produit{
+public class SelledProduct{
 	private String designation; 
 	private String description;
 	private double prix;
 	private double id_produit;
 	private double delai;
 	
-	public Produit(String designation, String descritpion, double prix, double id_produit, double delai ) {
+	public SelledProduct(String designation, String descritpion, double prix, double id_produit, double delai ) {
 		this.designation= designation; 
 		this.description= description;
 		this.prix= prix; 
