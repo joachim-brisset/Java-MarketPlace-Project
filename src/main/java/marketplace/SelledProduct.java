@@ -1,60 +1,71 @@
 package main.java.marketplace;
 
+import java.util.Date;
+
 public class SelledProduct{
-	private String designation; 
-	private String description;
+	private long stock; 
+	private Date  shippingtime;
 	private double prix;
-	private double id_produit;
-	private double delai;
+	private boolean externproduct;
+	private double totalCommission;
+	private long selledCount; 
 	
-	public SelledProduct(String designation, String descritpion, double prix, double id_produit, double delai ) {
-		this.designation= designation; 
-		this.description= description;
+	public SelledProduct(long stock, Date shippingtime, double prix, boolean externproduct, double totalCommission, long selledCount) {
+		this.stock= stock; 
+		this.shippingtime= shippingtime;
 		this.prix= prix; 
-		this.id_produit= id_produit; 
-		this.delai= delai;
+		this.externproduct= externproduct; 
+		this.totalCommission= totalCommission;
+		this.selledCount= selledCount;
 	}
-	public String getdesignation() {
-		return designation;
+
+	public long getStock() {
+		return stock;
 	}
-	
-	public void setdesignation(String designation) {
-		this.designation= designation;
+
+	public void setStock(long stock) {
+		this.stock = stock;
 	}
-	
-	public  String getdescription() {
-		return description;
+
+	public Date getShippingtime() {
+		return shippingtime;
 	}
-	
-	public void setdescription(String description) {
-		this.description = description;
+
+	public void setShippingtime(Date shippingtime) {
+		this.shippingtime = shippingtime;
 	}
-	
-	public double getprix() {
+
+	public double getPrix() {
 		return prix;
-		
 	}
-	
-	public void setprix(double prix) {
+
+	public void setPrix(double prix) {
 		this.prix = prix;
 	}
-	
-	public double getid_produit() {
-		return id_produit;
-		
+
+	public boolean isExternproduct() {
+		return externproduct;
+	}
+
+	public void setExternproduct(boolean externproduct) {
+		this.externproduct = externproduct;
+	}
+
+	public double getTotalCommission extends double SellContract() {
+		return totalCommission;
+	}
+
+	public void setTotalCommission(double totalCommission) {
+		this.totalCommission = totalCommission;
+	}
+
+	public long getSelledCount() {
+		return selledCount;
+	}
+
+	public void setSelledCount(long selledCount) {
+		this.selledCount = selledCount;
 	}
 	
-	public void setid_produit(double id_produit) {
-		this.id_produit = id_produit;
-	}
-	
-	public double getdelai() {
-		return delai;
-		
-	}
-	
-	public void setdelai(double delai) {
-		this.delai = delai;
-	}
 	
 	}
