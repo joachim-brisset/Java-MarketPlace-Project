@@ -1,37 +1,66 @@
-public class Deliverer{
+package marketplace;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import marketplace.utils.Address;
+
+public class Deliverer {
 	private String familyName;
 	private Address address;
 	private String drivingLicence;
-	private planning;
 	
-	public Deliverer(String familyName, Address address, String drivingLicence, planning) {
-		this.familyName= familyName;
-		this.address= address;
-		this.drivingLicence= drivingLicence;
-		this.planning= planning;
-	}
-	
-	public boolean notifyClient(Parcel) {
-		return returnParcel();
-	}
-	
-	public String getfamilyName() {
+	/**
+	 * @return the familyName
+	 */
+	public String getFamilyName() {
 		return familyName;
 	}
-	public void setfamilyName() {
+	/**
+	 * @param familyName the familyName to set
+	 */
+	public void setFamilyName(String familyName) {
 		this.familyName = familyName;
 	}
-	public Address getaddress() {
+	/**
+	 * @return the address
+	 */
+	public Address getAddress() {
 		return address;
 	}
-	public void setaddress() {
+	/**
+	 * @param address the address to set
+	 */
+	public void setAddress(Address address) {
 		this.address = address;
 	}
-	public String getdrivingLicence() {
+	/**
+	 * @return the drivingLicence
+	 */
+	public String getDrivingLicence() {
 		return drivingLicence;
 	}
-	public void setdrivingLicence() {
+	/**
+	 * @param drivingLicence the drivingLicence to set
+	 */
+	public void setDrivingLicence(String drivingLicence) {
 		this.drivingLicence = drivingLicence;
 	}
 	
+	private ArrayList<Parcel> pcl = new ArrayList<>();
+	private ArrayList<DeliveryServiceProvider> dsp = new ArrayList<>();
+	private ArrayList<User> user = new ArrayList<>();
+	
+	public List<User> getuser() {
+		return Collections.unmodifiableList(user);
+	}
+	
+	public List<Parcel> getpcl() {
+		return Collections.unmodifiableList(pcl);
+	}
+	
+	public List<DeliveryServiceProvider> getdsp() {
+		return Collections.unmodifiableList(dsp);
+	}
 }

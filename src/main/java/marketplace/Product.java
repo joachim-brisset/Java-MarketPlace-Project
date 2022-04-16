@@ -1,4 +1,4 @@
-package main.java.marketplace;
+package marketplace;
 public class Product{
 	private long iD; 
 	private String name;
