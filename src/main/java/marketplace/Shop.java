@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 public class Shop{ 
-	private SelledProduct [] sellproducts= new SelledProduct[1000]; 
+	private SelledProduct [] sellproducts;
 	static Scanner input= new Scanner(System.in); 
 	 
 	public SelledProduct createNewSelledProduct() { 
@@ -24,8 +24,9 @@ public class Shop{
 			 
 		return new SelledProduct(product, prix, selledCount); 
 	} 
-	 
+	
 	public SelledProduct[] createNewSelledProducts(int size) { 
+		sellproducts = new SelledProduct[size];
 		for(int i = 0; i < size; i++ ) { 
 			sellproducts[i] = createNewSelledProduct(); 
 		} 

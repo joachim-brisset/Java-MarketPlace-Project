@@ -11,6 +11,11 @@ public class Product{
 		this.description = description;
 	}
 
+	@Override
+	public String toString() {
+		return "Product [iD=" + iD + ", name=" + name + ", description=" + description + "]";
+	}
+
 	public long getID() {
 		return iD;
 	}

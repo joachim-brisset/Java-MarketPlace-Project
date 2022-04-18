@@ -14,7 +14,10 @@ public class Main {
 	public static void main(String[] args) { 
 		selection(); 
 		Shop shop = new Shop(); 
-		SelledProduct[] selledProducts = shop.createNewSelledProducts(5); 
+		SelledProduct[] selledProducts = shop.createNewSelledProducts(2); 
+		for( SelledProduct product: selledProducts) {
+			System.out.println(product.getProduct().getName() + " " + product.getPrix() + " " + product.getSelledCount());
+		}
 	} 
 	 
 	static void test1() { 
