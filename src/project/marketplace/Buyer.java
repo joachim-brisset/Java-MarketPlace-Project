@@ -1,6 +1,9 @@
 package project.marketplace;
 
 import project.User;
+import project.marketplace.Cart;
+import project.marketplace.Order;
+import project.marketplace.SelledProduct;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,7 +14,6 @@ public class Buyer extends User {
     private int buyerID;
     private Cart cart;
     private ArrayList<Order> orders = new ArrayList<Order>();
-
     private boolean subscribed;
 
     public Buyer(int buyerID) {

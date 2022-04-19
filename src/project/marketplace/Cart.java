@@ -3,10 +3,12 @@ package project.marketplace;
 import java.util.*;
 
 public class Cart {
-
+	
+	private static int i = 0;
     private HashMap<SelledProduct, Integer> productQuantity = new HashMap<>();
     private double price = 0;
     private Buyer buyer;
+   
 
     public Cart(Buyer buyer) {
         this.buyer = buyer;
@@ -79,4 +81,15 @@ public class Cart {
     public void setBuyer(Buyer buyer) {
         this.buyer = buyer;
     }
+    
+    public Order convertionCartEnOrder(Cart cart) {
+    	
+    	Order order = new Order(0, new DeliveryPoint(null), 0, 0, new HashMap(), new Buyer(0, null, null));
+    	order.ID = i;
+    	order.productQuantity = cart.productQuantity;
+    	order.buyer = cart.buyer;
+    	i= i + 1;
+    	return order;
+    }
+    
 }
