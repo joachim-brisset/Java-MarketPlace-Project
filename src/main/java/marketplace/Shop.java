@@ -20,7 +20,7 @@ public class Shop{
 			System.out.println("nombre de ventes:"); 
 			selledCount = (long) input.nextDouble(); 
 			input.nextLine(); 
-			System.out.println(); 
+			System.out.println("Nom du produit:"+ " " + product.getName()+" "+"prix:"+" "+ prix+" "+ "nombre de ventes:" +" "+ selledCount ) ; 
 			 
 		return new SelledProduct(product, prix, selledCount); 
 	} 
@@ -32,4 +32,71 @@ public class Shop{
 		} 
 		return sellproducts; 
 	} 
+	
+	public void addToProduct() {
+		for (int x=0 ; x<sellproducts.length; x++ ) {
+			if (sellproducts[x]==null) {
+				sellproducts[x] = createNewSelledProduct();
+				x = sellproducts.length;
+			}
+		}
+	}   
+	
+	public void printAll() {
+		for (int x = 0; x<sellproducts.length; x++) {
+			if (sellproducts[x] != null) {
+				System.out.println("Numero:" + (x+1)+"Nom"+sellproducts[x].getProduct().getName()+"stock:"+sellproducts[x].getStock());
+			}
+		}
+	}
+	
+	public void buyProduct() {
+		int sellproductsnumber = -1 , quantity = 0;
+		while ( sellproductsnumber<0 || sellproducts[sellproductsnumber]== null  ) {
+			System.out.println("Numero du produit acheté: ");
+			sellproductsnumber = input.nextInt()-1;
+			input.nextLine();
+		}
+		
+		System.out.println();
+		
+		while ( quantity < 1) {
+			System.out.println("Nombre d'article acheter:");
+			quantity = input.nextInt();
+			input.nextLine();
+		}
+		
+		/*sellproducts[sellproductsnumber].getProduct().setName(null)()[sellproducts[sellproductsnumber].getName()+ quantity);*/
+		double expenses = sellproducts[sellproductsnumber].getPrix()*quantity;
+	}
+	
+	public void result() {
+		int income = 0;
+		int expenses = 0;   
+		System.out.println(income-expenses+ "Euro");
+	}
+	
+	public void sellProduct() {
+		int sellproductsnumber = -1 , quantity = 0;
+		while ( sellproductsnumber<0 || sellproducts[sellproductsnumber]== null  ) {
+			System.out.println("Numero du produit vendue: ");
+			sellproductsnumber = input.nextInt()-1;
+			input.nextLine();
+		}
+		
+		System.out.println();
+		
+		while ( quantity < 1 || sellproducts[sellproductsnumber].getStock()<quantity) {
+			System.out.println("Nombre d'article Vendue:");
+			quantity = input.nextInt();
+			
+			if (quantity>sellproducts[sellproductsnumber].getStock()) {
+				System.out.println("la quantité en vente est plus grande que la quantité en stock ");
+				System.out.println();
+			}
+		}
+		
+		sellproducts[sellproductsnumber].setStock(sellproducts[sellproductsnumber].getStock()- quantity);
+		double income = sellproducts[sellproductsnumber].getPrix()*quantity;
+	}
 } 
