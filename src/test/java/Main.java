@@ -43,6 +43,10 @@ public class Main {
 		shop.printAll();
 		shop.result();
 		shop.printAll();
+		
+		while (true) {
+			runShop();
+		}
 	} 
 	 
 	static void ecrire(SelledProduct[] selledProducts) throws IOException { 
@@ -103,19 +107,26 @@ public class Main {
 		return result;	 
 	} 
  
-	public static void runSelledProduct() { 
+	public static void runShop() { 
+		Shop shop= new Shop();
 		switch (selection()) { 
-		    case 1: 
+		    case 1:
+		    	shop.addToProduct();
 		    	break;  
-		    case 2:  
+		    case 2:
+		    	shop.buyProduct();
 		    	break; 
-		    case 3:  
+		    case 3:
+		    	shop.sellProduct();
 		    	break; 
-		    case 4:  
+		    case 4:
+		    	shop.printAll();
 		    	break; 
-		    case 5: 
+		    case 5:
+		    	shop.result();
 		    	break; 
-		    case 6: 
+		    case 6:
+		    	System.exit(0);
 		    	break;	 
 		} 
 	}	 

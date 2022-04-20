@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Shop{ 
 	private SelledProduct [] sellproducts;
 	static Scanner input= new Scanner(System.in); 
-	 
+
 	public SelledProduct createNewSelledProduct() { 
 		double prix =0; 
 		long selledCount =0; 
