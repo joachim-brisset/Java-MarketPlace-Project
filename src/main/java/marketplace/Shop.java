@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 
 public class Shop{ 
-	private SelledProduct [] sellproducts;
+	private SelledProduct [] selledProducts;
 	static Scanner input= new Scanner(System.in); 
 
 	public SelledProduct createNewSelledProduct() { 
@@ -26,33 +26,33 @@ public class Shop{
 	} 
 	
 	public SelledProduct[] createNewSelledProducts(int size) { 
-		sellproducts = new SelledProduct[size];
+		selledProducts = new SelledProduct[size];
 		for(int i = 0; i < size; i++ ) { 
-			sellproducts[i] = createNewSelledProduct(); 
+			selledProducts[i] = createNewSelledProduct(); 
 		} 
-		return sellproducts; 
+		return selledProducts; 
 	} 
 	
 	public void addToProduct() {
-		for (int x=0 ; x<sellproducts.length; x++ ) {
-			if (sellproducts[x]==null) {
-				sellproducts[x] = createNewSelledProduct();
-				x = sellproducts.length;
+		for (int x=0 ; x<selledProducts.length; x++ ) {
+			if (selledProducts[x]==null) {
+				selledProducts[x] = createNewSelledProduct();
+				x = selledProducts.length;
 			}
 		}
 	}   
 	
 	public void printAll() {
-		for (int x = 0; x<sellproducts.length; x++) {
-			if (sellproducts[x] != null) {
-				System.out.println("Numero:" + (x+1)+"Nom"+sellproducts[x].getProduct().getName()+"stock:"+sellproducts[x].getStock());
+		for (int x = 0; x< selledProducts.length; x++) {
+			if (selledProducts[x] != null) {
+				System.out.println("Numero:" + (x+1)+"Nom"+selledProducts[x].getProduct().getName()+"stock:"+selledProducts[x].getStock());
 			}
 		}
 	}
 	
 	public void buyProduct() {
 		int sellproductsnumber = -1 , quantity = 0;
-		while ( sellproductsnumber<0 || sellproducts[sellproductsnumber]== null  ) {
+		while ( sellproductsnumber<0 || selledProducts[sellproductsnumber]== null  ) {
 			System.out.println("Numero du produit acheté: ");
 			sellproductsnumber = input.nextInt()-1;
 			input.nextLine();
@@ -67,7 +67,7 @@ public class Shop{
 		}
 		
 		/*sellproducts[sellproductsnumber].getProduct().setName(null)()[sellproducts[sellproductsnumber].getName()+ quantity);*/
-		double expenses = sellproducts[sellproductsnumber].getPrix()*quantity;
+		double expenses = selledProducts[sellproductsnumber].getPrix()*quantity;
 	}
 	
 	public void result() {
@@ -78,7 +78,7 @@ public class Shop{
 	
 	public void sellProduct() {
 		int sellproductsnumber = -1 , quantity = 0;
-		while ( sellproductsnumber<0 || sellproducts[sellproductsnumber]== null  ) {
+		while ( sellproductsnumber<0 || selledProducts[sellproductsnumber]== null  ) {
 			System.out.println("Numero du produit vendue: ");
 			sellproductsnumber = input.nextInt()-1;
 			input.nextLine();
@@ -86,17 +86,17 @@ public class Shop{
 		
 		System.out.println();
 		
-		while ( quantity < 1 || sellproducts[sellproductsnumber].getStock()<quantity) {
+		while ( quantity < 1 || selledProducts[sellproductsnumber].getStock()<quantity) {
 			System.out.println("Nombre d'article Vendue:");
 			quantity = input.nextInt();
 			
-			if (quantity>sellproducts[sellproductsnumber].getStock()) {
+			if (quantity>selledProducts[sellproductsnumber].getStock()) {
 				System.out.println("la quantité en vente est plus grande que la quantité en stock ");
 				System.out.println();
 			}
 		}
 		
-		sellproducts[sellproductsnumber].setStock(sellproducts[sellproductsnumber].getStock()- quantity);
-		double income = sellproducts[sellproductsnumber].getPrix()*quantity;
+		selledProducts[sellproductsnumber].setStock(selledProducts[sellproductsnumber].getStock()- quantity);
+		double income = selledProducts[sellproductsnumber].getPrix()*quantity;
 	}
 } 
