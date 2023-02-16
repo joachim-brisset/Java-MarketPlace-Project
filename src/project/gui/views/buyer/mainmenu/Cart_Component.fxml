@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.controllers.buyer.mainmenu.CartComponentController">
+   <children>
+      <GridPane layoutX="20.0" layoutY="20.0" prefHeight="520.9454371731347" prefWidth="550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints maxHeight="162.18180602522924" minHeight="0.0" prefHeight="48.12729357002202" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="333.09090697233347" minHeight="0.0" prefHeight="34.03637849665876" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="424.9272601066152" minHeight="10.0" prefHeight="417.16360585614717" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="531.0">
+               <children>
+                  <Label layoutX="24.0" layoutY="15.0" text="Votre panier">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblPrice" layoutX="315.0" layoutY="17.0" text="00,00€" />
+                  <ButtonBar layoutX="342.0" layoutY="5.0" prefHeight="40.0" prefWidth="91.0">
+                     <buttons>
+                        <Button mnemonicParsing="false" onAction="#handleRemoveAll" text="Effacer" />
+                        <Button mnemonicParsing="false" onAction="#handleValidate" text="Valider" />
+                     </buttons>
+                  </ButtonBar>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="51.0" prefWidth="530.0" GridPane.rowIndex="1">
+               <children>
+                  <Button alignment="CENTER" layoutX="424.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleAddNewProduct" text="Ajouter un produit" />
+               </children>
+            </AnchorPane>
+            <ListView fx:id="cartedProductContainer" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

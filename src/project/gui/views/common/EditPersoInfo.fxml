@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.gui.controllers.common.EditPersoInfoController">
+   <children>
+      <AnchorPane layoutY="-3.0" prefHeight="410.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="200.0" layoutY="14.0" text="Information personnelles">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="67.0" text="Prenom">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="106.0" text="Nom">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="inputFirstName" layoutX="104.0" layoutY="68.0" promptText="prenom" />
+            <TextField fx:id="inputLastName" layoutX="105.0" layoutY="107.0" promptText="nom" />
+            <Label layoutX="20.0" layoutY="178.0" text="Adresse">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="butEditAddress" layoutX="22.0" layoutY="218.0" mnemonicParsing="false" onAction="#handleEditAddress" prefHeight="30.0" prefWidth="63.0" text="Editer">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label layoutX="14.0" layoutY="313.0" text="Password">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="150.0" layoutY="314.0" mnemonicParsing="false" onAction="#handleEditPassword" prefHeight="30.0" prefWidth="174.0" text="Modifier le mot de passe">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button layoutX="435.0" layoutY="366.0" mnemonicParsing="false" onAction="#handleValidate" prefHeight="30.0" prefWidth="150.0" text="Valider">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <CheckBox fx:id="checkSubscribe" layoutX="467.0" layoutY="84.0" mnemonicParsing="false" text="Souscrit">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </CheckBox>
+            <Label fx:id="lblAddress1Line" layoutX="143.0" layoutY="183.0"/>
+            <Label fx:id="lblAddress2Line" layoutX="143.0" layoutY="209.0"/>
+            <Label fx:id="lblAddress3Line" layoutX="143.0" layoutY="240.0"/>
+            <Button fx:id="butCancel" layoutX="300.0" layoutY="366.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="123.0" text="Annuler">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>

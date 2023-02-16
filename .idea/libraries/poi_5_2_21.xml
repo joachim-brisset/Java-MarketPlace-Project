@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="poi-5.2.21">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../library/poi-bin-5.2.2-20220312/poi-bin-5.2.2/poi-5.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../library/poi-bin-5.2.2-20220312/poi-bin-5.2.2/poi-ooxml-5.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../library/poi-bin-5.2.2-20220312/poi-bin-5.2.2/poi-ooxml-lite-5.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../library/poi-bin-5.2.2-20220312/poi-bin-5.2.2/ooxml-lib/commons-compress-1.21.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../library/poi-bin-5.2.2-20220312/poi-bin-5.2.2/lib/SparseBitSet-1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
